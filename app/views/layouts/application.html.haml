@@ -2,7 +2,7 @@
   %head
     %meta{charset: 'utf-8'}/
     %title
-      Jobs
+      Captain Challenge
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -10,4 +10,5 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
+    = render 'layouts/navigation'
     = yield
