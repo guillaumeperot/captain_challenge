@@ -10,10 +10,12 @@
       .media-content
         %p.title.is-4 
           = character.name
-        -# %p.subtitle.is-6 @johnsmith
+        %p.subtitle.is-6  
+          = "Rang : #{character.rank}"
     .content
       %p= "Points de vie : #{character.health}"
       %p= "Points d'attaque : #{character.attack}"
       %p= "Vitesse : #{character.speed}"
+      %p= "Puissance : #{character.power}"
       %p= "Pourcentage d'évasion : #{character.dodge_rate}%"
       %p= "Pourcentage de critique : #{character.critical_rate}%"

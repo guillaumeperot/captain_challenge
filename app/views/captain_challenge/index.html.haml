@@ -2,12 +2,16 @@
   .hero-body
     .container.has-text-centered
       %h1.title
-        Bienvenue dans Captain Challenge !
-- if @characters.present?
-  %h2 Les Personnages :
-  - @characters.each do |character|
-    %p= link_to character.name, character_path(character)
-- else 
-  %h2 Aucuns personnage dispo
+        Bienvenue dans L'Arène de Captain Challenge !
+.container
+  - if @characters_ranked.present?
+    %h2 Les Personnages disponible :
+    .list.is-hoverable
+      - @characters_ranked.each do |rank, characters|
+        %h3= "Rang #{rank}"
+        - characters.each do |character|
+          = link_to character.name, character_path(character), class: "list-item"
+  - else 
+    %h2 Aucuns personnage disponible
             
         
