@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_16_131845) do
+ActiveRecord::Schema.define(version: 2019_10_16_141507) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,30 @@ ActiveRecord::Schema.define(version: 2019_10_16_131845) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "power"
     t.integer "rank"
+  end
+
+  create_table "clash_events", force: :cascade do |t|
+    t.integer "clash_id"
+    t.string "attacker_name"
+    t.integer "attack_type"
+    t.integer "attack_damage"
+    t.string "defender_name"
+    t.integer "defend_type"
+    t.integer "defender_health"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["clash_id"], name: "index_clash_events_on_clash_id"
+  end
+
+  create_table "clashs", force: :cascade do |t|
+    t.integer "winner_id"
+    t.integer "loser_id"
+    t.text "winner_attributes"
+    t.text "loser_attributes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["loser_id"], name: "index_clashs_on_loser_id"
+    t.index ["winner_id"], name: "index_clashs_on_winner_id"
   end
 
 end
