@@ -3,8 +3,11 @@
     .container.has-text-centered
       %h1.title
         Bienvenue dans Captain Challenge !
-      %h2.title
-        Entrer dans l'aréne !
-      %a.button.is-danger Fight !
-        
+- if @characters.present?
+  %h2 Les Personnages :
+  - @characters.each do |character|
+    %p= link_to character.name, character_path(character)
+- else 
+  %h2 Aucuns personnage dispo
+            
         

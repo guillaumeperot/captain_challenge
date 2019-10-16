@@ -1,2 +1,2 @@
-module HeroesHelper
+module CharactersHelper
 end
