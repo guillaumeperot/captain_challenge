@@ -10,5 +10,4 @@
       .navbar-end
         %a.navbar-item.is-active
           Arène
-        %a.navbar-item
-          Création de personnage
+        = link_to "Création d'un héro", new_character_path, class: 'navbar-item'

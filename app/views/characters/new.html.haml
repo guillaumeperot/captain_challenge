@@ -1,0 +1,27 @@
+.container
+    %h1.title.has-text-centered Création d'un héro
+    = simple_form_for @character do |f|
+        .field
+            = f.input :name, label: 'Nom', error: 'Username is mandatory, please specify one'
+        .field
+            = f.input :health, label: 'Vie', hint: 'No special characters.'
+        .field
+            = f.input :speed, label: 'Vitesse', hint: 'No special characters.'
+        .field
+            = f.input :attack, label: 'Attaque'
+        .field
+            = f.input :dodge_rate, label: '% de défense'
+        .field
+            = f.input :critical_rate, label: '% de critique'
+        .field
+            .file
+                %label.file-label
+                    = f.input :avatar, as: :file, label: false
+                    %span.file-cta
+                        %span.file-icon
+                            %i.fas.fa-upload
+                        %span.file-label
+                            Choose a file…
+        .control
+            = f.button :submit, class: "is-link"
+

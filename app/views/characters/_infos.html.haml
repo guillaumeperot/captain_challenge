@@ -1,0 +1,19 @@
+.card
+  .card-image
+    %figure.image.is-128x128
+      = image_tag character.avatar.url(:profile), class: "is-128x128"
+  .card-content
+    .media
+      .media-left
+        %figure.image.is-48x48
+          %img{:alt => "Placeholder image", :src => "https://bulma.io/images/placeholders/96x96.png"}/
+      .media-content
+        %p.title.is-4 
+          = character.name
+        -# %p.subtitle.is-6 @johnsmith
+    .content
+      %p= "Points de vie : #{character.health}"
+      %p= "Points d'attaque : #{character.attack}"
+      %p= "Vitesse : #{character.speed}"
+      %p= "Pourcentage d'évasion : #{character.dodge_rate}%"
+      %p= "Pourcentage de critique : #{character.critical_rate}%"

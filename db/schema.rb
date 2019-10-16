@@ -10,6 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_10_12_230217) do
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.integer "health"
+    t.integer "attack"
+    t.integer "speed", default: 1
+    t.integer "dodge_rate", default: 0
+    t.integer "critical_rate", default: 0
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
